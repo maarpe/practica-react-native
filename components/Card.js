@@ -8,10 +8,8 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         marginTop: 20,
     },
-  cafe: {
-    width: 280,
-    height: 300,
-    borderRadius: 50,
+  button:{
+
   },
   texto: {
     overflow: 'hidden',
@@ -27,6 +25,11 @@ const Card = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.texto}>Americano</Text>
+      <Button>
+        title="Presioname"
+        onPress={()=>Alert.alert('Botón presionado')}
+
+      </Button>
     </View>
   );
 };

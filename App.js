@@ -5,7 +5,6 @@ import react from 'react';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Button></Button>
       <StatusBar style="auto" />
     </View>
   );
