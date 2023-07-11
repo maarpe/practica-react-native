@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, StyleSheet, Text } from 'react-native';
+import { View, Button, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,15 +18,21 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 24,
+  },
+  input: {
+    overflow: 'hidden',
+    textAlign: 'center',
+    padding: 10.,
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 24,
+
   }
 });
 
 const Card = () => {
   return (
     <View style={styles.container}>
-      <Text aria-label='Presioname'></Text>
-      <Text style={styles.texto}>Presioname</Text>
-      <Button onPress={() => Alert.alert('Botón presionado')}></Button>  
     </View>
   );
 };
