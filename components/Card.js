@@ -1,14 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import { Button, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'white',
-        borderRadius: 50,
-        borderColor: 'black',
-        marginTop: 20,
-    },
-  button:{
+  container: {
+    backgroundColor: 'white',
+    borderRadius: 50,
+    borderColor: 'black',
+    marginTop: 20,
+  },
+  button: {
 
   },
   texto: {
@@ -24,12 +24,9 @@ const styles = StyleSheet.create({
 const Card = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>Americano</Text>
-      <Button>
-        title="Presioname"
-        onPress={()=>Alert.alert('Botón presionado')}
-
-      </Button>
+      <Text aria-label='Presioname'></Text>
+      <Text style={styles.texto}>Presioname</Text>
+      <Button onPress={() => Alert.alert('Botón presionado')}></Button>  
     </View>
   );
 };
