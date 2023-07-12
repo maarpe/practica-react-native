@@ -1,21 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import react from 'react';
-import Card from './components/Card';
+import { useEffect, useState } from 'react';
 
 export default function App() {
+
+  const [texto, setTexto] = useState('');
+  const [TituloBoton, setTitulo] = useState('');
+
+  useEffect(() => {
+    setTitulo("Presioname");
+  }, [])
+
+  function cambiarBoton() {
+    if(TituloBoton === "Presioname") {
+      setTitulo("Presionado");
+    } else {
+      setTitulo("Presioname");
+    }
+  }
+
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-      <TextInput 
-        style={styles.input}  
-        placeholder="escribí algo"
-        keyboardType="numeric"
-      />
-      <Button title="Presioname" onPress={() => Alert.alert('Botón presionado')}>
-      </Button>
-      <Card>
-      </Card>
+      <View style={styles.card}>
+        <StatusBar style="auto" />
+        <input onKeyUp={(e) => setTexto(e.target.value)} />
+        <p style={styles.textoEscrito}>{texto}</p>
+        <Button title={TituloBoton} onPress={cambiarBoton}></Button>
+      </View>
     </View>
   );
 }
@@ -32,5 +43,15 @@ const styles = StyleSheet.create({
     padding: 5,
     borderWidth: 1,
     borderColor: 'black'
-  }
+  },
+  card: {
+    borderColor: 'black',
+    borderWidth: 1,
+  },
+  textoEscrito: {
+    margin: 5,
+    marginLeft: 2,
+    padding: 5,
+    borderColor: 'grey',
+  },
 });
